@@ -1,0 +1,14 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Home</title>
+</head>
+<body>
+    <form action="{% url 'shorten' %}">
+        <input type="text" name="originalurl" />
+        <br/>
+        <input type="submit" value="Create short URL" />
+    </form>
+</body>
+</html>
