@@ -20,7 +20,7 @@ def shorten(request):
 
 def redirect_to_original(request, short_url=None):
     obj = get_object_or_404(ShortURL, short_url=short_url)
-    HttpResponseRedirect(obj.url)
+    return HttpResponseRedirect(obj.url)
 
 
 
