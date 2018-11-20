@@ -13,9 +13,22 @@ def home(request):
 def shorten(request):
     original_url = request.GET['originalurl']
     uri = code_generator()
-    obj = ShortURL(url=original_url, short_url=request.get_host() + '/' + uri, created_date=timezone.now())
+    obj = ShortURL(url=original_url, short_url=uri, created_date=timezone.now())
     obj.save()
-    return render(request, 'redir/shorten.html', {'original': obj.url, 'shorten': obj.short_url, 'date': obj.created_date})
+    # TODO add error message for this case
+    '''
+        if obj.clean():
+            obj.save()
+            return render(request, 'redir/shorten.html',
+                          {'original': obj.url, 'shorten': request.get_host() + '/' + uri, 'date': obj.created_date})
+        else:
+
+            return render(request, 'redir/home.html')
+            '''
+    return render(request, 'redir/shorten.html',
+                  {'original': obj.url, 'shorten': request.get_host() + '/' + uri, 'date': obj.created_date})
+
+
 
 
 def redirect_to_original(request, short_url=None):
@@ -23,6 +36,3 @@ def redirect_to_original(request, short_url=None):
     obj.counter += 1
     obj.save()
     return HttpResponseRedirect(obj.url)
-
-
-

@@ -1,14 +1,24 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Home</title>
 </head>
 <body>
+<div class="container">
+<div class="row">
+<div class="text-center col-sm-12">
     <form action="{% url 'shorten' %}">
-        <input type="text" name="originalurl" />
+        <h1>URL Shortener</h1>
+        <input type="text" name="originalurl"/>
         <br/>
-        <input type="submit" value="Create short URL" />
+        <br/>
+        <input class="btn btn-primary" type="submit" value="Create short URL"/>
     </form>
+</div>
+</div>
+</div>
 </body>
 </html>

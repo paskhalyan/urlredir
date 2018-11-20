@@ -1,15 +1,19 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
     <meta charset="UTF-8">
     <title>Shorten</title>
 </head>
 <body>
+<div style="align-text: center; width: 800px; margin: 0 auto;">
     <h3>Shorten URL:</h3>
-    {{ shorten }}
+    <a href="{{ shorten }}">{{ shorten }}</a>
     <h4>Original URL:</h4>
-    {{ original }}
+    <a href="{{ original }}">{{ original }}</a>
     <h5>Date:</h5>
     {{ date }}
+</div>
 </body>
 </html>
